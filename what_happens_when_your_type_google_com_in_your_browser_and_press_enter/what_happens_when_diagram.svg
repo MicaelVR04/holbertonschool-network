@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="920" viewBox="0 0 1500 920">
+  <style>
+    .bg { fill: #f8fafc; }
+    .box { fill: #ffffff; stroke: #1f2937; stroke-width: 2; rx: 10; }
+    .secure { fill: #ecfdf5; stroke: #047857; stroke-width: 3; rx: 12; }
+    .network { fill: #eef6ff; stroke: #1d4ed8; stroke-width: 3; rx: 12; }
+    .firewall { fill: #fee2e2; stroke: #b91c1c; stroke-width: 3; rx: 12; }
+    .server { fill: #fff7ed; stroke: #c2410c; stroke-width: 3; rx: 12; }
+    .db { fill: #fef9c3; stroke: #a16207; stroke-width: 3; rx: 12; }
+    .title { font: 700 29px Arial, sans-serif; fill: #111827; }
+    .label { font: 700 20px Arial, sans-serif; fill: #111827; }
+    .small { font: 16px Arial, sans-serif; fill: #374151; }
+    .note { font: 15px Arial, sans-serif; fill: #334155; }
+    .arrow { stroke: #111827; stroke-width: 3; fill: none; marker-end: url(#arrowhead); }
+    .green { stroke: #047857; stroke-width: 3; fill: none; marker-end: url(#arrowhead-green); }
+    .blue { stroke: #1d4ed8; stroke-width: 3; fill: none; marker-end: url(#arrowhead-blue); }
+    .dash { stroke: #6b7280; stroke-width: 2.5; fill: none; stroke-dasharray: 8 7; marker-end: url(#arrowhead-gray); }
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#111827"/>
+    </marker>
+    <marker id="arrowhead-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#047857"/>
+    </marker>
+    <marker id="arrowhead-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arrowhead-gray" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6b7280"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" width="1500" height="920"/>
+  <text class="title" x="55" y="55">What happens when you type https://www.google.com and press Enter</text>
+
+  <rect class="box" x="70" y="135" width="210" height="100"/>
+  <text class="label" x="125" y="176">Browser</text>
+  <text class="small" x="100" y="205">User enters URL</text>
+
+  <rect class="network" x="380" y="120" width="250" height="130"/>
+  <text class="label" x="472" y="160">DNS</text>
+  <text class="small" x="415" y="192">Resolve www.google.com</text>
+  <text class="small" x="415" y="218">Return server IP address</text>
+
+  <rect class="network" x="735" y="120" width="255" height="130"/>
+  <text class="label" x="815" y="160">TCP/IP</text>
+  <text class="small" x="775" y="192">Connect to server IP</text>
+  <text class="small" x="775" y="218">Port 443 for HTTPS</text>
+
+  <rect class="secure" x="1090" y="120" width="270" height="130"/>
+  <text class="label" x="1168" y="160">HTTPS / TLS</text>
+  <text class="small" x="1125" y="192">Certificate is verified</text>
+  <text class="small" x="1125" y="218">Traffic becomes encrypted</text>
+
+  <rect class="firewall" x="145" y="405" width="220" height="105"/>
+  <text class="label" x="210" y="446">Firewall</text>
+  <text class="small" x="180" y="478">Allows HTTPS traffic</text>
+
+  <rect class="network" x="485" y="385" width="250" height="145"/>
+  <text class="label" x="548" y="426">Load Balancer</text>
+  <text class="small" x="525" y="458">Distributes request</text>
+  <text class="small" x="525" y="484">to backend servers</text>
+
+  <rect class="server" x="855" y="370" width="250" height="160"/>
+  <text class="label" x="918" y="412">Web Server</text>
+  <text class="small" x="900" y="444">Receives HTTP request</text>
+  <text class="small" x="900" y="470">Serves static files or</text>
+  <text class="small" x="900" y="496">forwards dynamic work</text>
+
+  <rect class="server" x="245" y="675" width="275" height="150"/>
+  <text class="label" x="300" y="715">Application Server</text>
+  <text class="small" x="285" y="750">Runs backend code</text>
+  <text class="small" x="285" y="776">Generates the page</text>
+
+  <rect class="db" x="710" y="675" width="245" height="150"/>
+  <text class="label" x="785" y="715">Database</text>
+  <text class="small" x="750" y="750">Stores application data</text>
+  <text class="small" x="750" y="776">Returns requested data</text>
+
+  <rect class="box" x="1125" y="665" width="255" height="170"/>
+  <text class="label" x="1183" y="708">Response</text>
+  <text class="small" x="1160" y="742">HTML, CSS, JavaScript,</text>
+  <text class="small" x="1160" y="768">images, and data return</text>
+  <text class="small" x="1160" y="794">through the same path</text>
+
+  <path class="dash" d="M 280 170 L 380 170"/>
+  <text class="note" x="300" y="145">DNS request</text>
+
+  <path class="blue" d="M 630 185 L 735 185"/>
+  <text class="note" x="650" y="160">IP address</text>
+
+  <path class="blue" d="M 990 185 L 1090 185"/>
+  <text class="note" x="1010" y="160">TCP connection</text>
+
+  <path class="green" d="M 1225 250 C 950 310, 520 310, 255 405"/>
+  <text class="note" x="610" y="335">Encrypted HTTPS request to server IP on port 443</text>
+
+  <path class="arrow" d="M 365 458 L 485 458"/>
+  <path class="arrow" d="M 735 458 L 855 458"/>
+  <path class="arrow" d="M 980 530 C 820 610, 625 670, 520 750"/>
+  <path class="arrow" d="M 520 750 L 710 750"/>
+  <path class="arrow" d="M 955 750 L 1125 750"/>
+  <path class="green" d="M 1125 805 C 780 885, 340 865, 175 235"/>
+
+  <text class="note" x="560" y="630">Web server asks app server for dynamic page</text>
+  <text class="note" x="555" y="725">App server requests data from database</text>
+  <text class="note" x="905" y="725">Data helps build the web page</text>
+</svg>
